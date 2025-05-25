@@ -1,0 +1,53 @@
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <h2>Profesores</h2>
+    <button mat-raised-button color="primary" (click)="abrirFormulario()">+ Nuevo</button>
+</div>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+
+    <ng-container matColumnDef="nombre">
+        <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="apellido">
+        <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.apellido}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="telefono">
+        <mat-header-cell *matHeaderCellDef> Teléfono </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.telefono}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="especialidad">
+        <mat-header-cell *matHeaderCellDef> Especialidad </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.especialidad}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaContratacion">
+        <mat-header-cell *matHeaderCellDef> Contratación </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fechaContratacion}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-button color="accent" (click)="abrirFormulario(element)">Editar</button>
+            <button mat-button color="warn" (click)="eliminar(element)">Eliminar</button>
+        </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageIndex]="pageIndex" [pageSizeOptions]="[5, 10, 20]"
+    (page)="cambiarPagina($event)">
+</mat-paginator>

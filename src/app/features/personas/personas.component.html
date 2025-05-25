@@ -1,0 +1,39 @@
+<h2>Personas <em> </em></h2>
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.nombre }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="apellido">
+    <mat-header-cell *matHeaderCellDef>Apellido</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.apellido }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.email }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="telefono">
+    <mat-header-cell *matHeaderCellDef>Teléfono</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.telefono }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="fechaNacimiento">
+    <mat-header-cell *matHeaderCellDef>Nacimiento</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.fechaNacimiento }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="tipo">
+    <mat-header-cell *matHeaderCellDef>Tipo</mat-header-cell>
+    <mat-cell *matCellDef="let persona">{{ persona.tipo }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>

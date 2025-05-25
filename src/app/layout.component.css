@@ -1,0 +1,40 @@
+.sidenav-container {
+  height: 100vh
+  text;
+}
+
+.sidenav {
+  width: 220px;
+  background-color: #f0f0f0;
+}
+
+
+.main-toolbar {
+  position: sticky;
+  top: 0;
+  background-color: #3f51b5;  
+  color: white;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.perfil-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.main-content {
+  padding: 24px;
+}
+
+a.mat-list-item.active-link {
+  background-color: rgba(63, 81, 181, 0.1); /* highlight active link */
+  font-weight: bold;
+}

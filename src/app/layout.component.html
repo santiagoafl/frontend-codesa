@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="main-toolbar">
+  <span>Sistema de Registro Escolar</span>
+  <span class="spacer"></span>
+<img src="assets/img/codesa-logo.png" class="perfil-img" />
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav" [fixedInViewport]="true">
+    <mat-toolbar class="sidenav-header">Menú</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/personas" routerLinkActive="active-link">Personas</a>
+      <a mat-list-item routerLink="/estudiantes" routerLinkActive="active-link">Estudiantes</a>
+      <a mat-list-item routerLink="/profesores" routerLinkActive="active-link">Profesores</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
