@@ -5,7 +5,6 @@ Este proyecto es la interfaz web desarrollada en **Angular** para gestionar estu
 ## 🌐 Tecnologías utilizadas
 
 - Angular 19+
-- Angular Material (tema oscuro)
 - Standalone Components
 - Formulario reactivo
 - MatTable + MatPaginator
